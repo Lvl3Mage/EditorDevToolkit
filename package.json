@@ -1,0 +1,19 @@
+﻿{
+  "name": "com.lvl3mage.com.lvl3mage.editor-dev-toolkit",
+  "version": "1.0.0",
+  "displayName": "Editor Dev Toolkit",
+  "description": "A collection of utility functions for development within the Unity Editor.",
+  "unity": "2021.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvl3mage/EditorDevToolkit.git"
+  },
+  "keywords": [
+  ],
+  "author": "lvl3mage",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lvl3mage/EditorDevToolkit/issues"
+  },
+  "homepage": "https://github.com/lvl3mage/EditorDevToolkit#readme"
+}
