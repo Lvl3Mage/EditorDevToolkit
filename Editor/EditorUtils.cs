@@ -163,6 +163,7 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 			var path = parentProp.propertyPath.Split(".");
 			object obj = parentProp.serializedObject.targetObject;
 			int parentIndex = path.Length - 2;
+			if(parentIndex < 0) return obj;
 			if(path[parentIndex] == "Array"){
 				parentIndex -= 2;
 			}
