@@ -1,8 +1,10 @@
-﻿{
+{
     "name": "Lvl3Mage.EditorDevToolkit.Editor",
     "rootNamespace": "Lvl3Mage.EditorDevToolkit",
     "references": [],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Lvl3Mage.EditorDevToolkit.Editor
 {
@@ -68,6 +69,24 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 			return property.serializedObject.FindProperty(pathBuilder.ToString());
 		}
         /// <summary>
+        /// Draws a property and increments the drawHeight of the position
+        /// </summary>
+        /// <param name="position">
+        /// The position to draw the property at. This will be incremented by the height of the property
+        /// </param>
+        /// <param name="property">
+        /// The property to draw
+        /// </param>
+        /// <param name="label">
+        /// The label to draw with the property. If null, the property's displayName will be used
+        /// </param>
+		public static void DrawProperty(ref Rect position, SerializedProperty property, GUIContent label = null)
+		{
+			label ??= new GUIContent(property.displayName);
+			Rect propRect = ReservePropertyRect(ref position, property);
+			EditorGUI.PropertyField(propRect, property, label, true);
+		}
+        /// <summary>
         /// Computes the rect for a property and increments the drawHeight
         /// </summary>
         /// <param name="prop">
@@ -85,34 +104,50 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
         /// <returns>
         /// The rect for the property
         /// </returns>
-        public static Rect PropertyRect(SerializedProperty prop, float x, float width, ref float drawHeight){
+        public static Rect ReservePropertyRect(ref Rect position, SerializedProperty prop){
 			float propHeight = EditorGUI.GetPropertyHeight(prop, true);
-			var propRect = new Rect(x, drawHeight, width, propHeight);
+			var propRect = new Rect(position.x, position.y, position.width, propHeight);
 			
-			if(propHeight > 0) drawHeight += EditorGUIUtility.standardVerticalSpacing;
-			
-			drawHeight += propRect.height;
+			if(propHeight > 0) position.y += EditorGUIUtility.standardVerticalSpacing;
+			position.y += propRect.height;
 			return propRect;
 		}
-        /// <summary>
-        /// Computes a rect for a line and increments the drawHeight
-        /// </summary>
-        /// <param name="x">
-        /// The x position of the rect
-        /// </param>
-        /// <param name="width">
-        /// The width of the rect
-        /// </param>
-        /// <param name="drawHeight">
-        /// The current height of the draw. This will be incremented by the height of the line
-        /// </param>
-        /// <returns>
-        /// The rect for the line
-        /// </returns>
-		public static Rect LineRect(float x, float width, ref float drawHeight){
-			var propRect = new Rect(x, drawHeight, width, EditorGUIUtility.singleLineHeight);
-			drawHeight += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
+
+		/// <summary>
+		/// Computes a rect for the gui content and increments the drawHeight
+		/// </summary>
+		/// <param name="position">
+		/// The position to draw the rect at. This will be incremented by the height of the rect
+		/// </param>
+		/// <param name="content">
+		/// The content to draw in the rect. If null, the content will be presumed as a si
+		/// </param>
+		/// <param name="style">
+		/// The style to use for the rect. If null, EditorStyles.label will be used
+		/// </param>
+		/// <param name="fullWidth">
+		/// Whether the line should take up the full width of the position
+		/// </param>
+		/// <returns>
+		/// The rect for the line
+		/// </returns>
+		public static Rect ReserveContentRect(ref Rect position, GUIContent content, GUIStyle style = null){
+	        if(style == null) style = EditorStyles.label;
+			var propRect = new Rect(position.x, position.y, position.width, style.CalcHeight(content, position.width));
+			position.y += propRect.height + EditorGUIUtility.standardVerticalSpacing;
 			return propRect;
+		}
+		/// <summary>
+		/// Computes a rect for a line and increments the drawHeight
+		/// </summary>
+		/// <param name="position">
+		/// The position to draw the line at. This will be incremented by the height of the line
+		/// </param>
+		/// <returns>
+		/// The rect for the line
+		/// </returns>
+		public static Rect ReserveLineRect(ref Rect position, GUIStyle style = null){
+			return ReserveContentRect(ref position, GUIContent.none, style);
 		}
 		/// <summary>
 		/// Gets the parent object of a serialized property. Useful for reflection
@@ -127,44 +162,71 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 		{
 			var path = parentProp.propertyPath.Split(".");
 			object obj = parentProp.serializedObject.targetObject;
+			int parentIndex = path.Length - 2;
+			if(path[parentIndex] == "Array"){
+				parentIndex -= 2;
+			}
+			path = path.Take(parentIndex+1).ToArray();
+			return GetObjectAtPath(obj, path);
+		}
+		public static object GetPropertyObject(SerializedProperty parentProp)
+		{
+			var path = parentProp.propertyPath.Split(".");
+			object obj = parentProp.serializedObject.targetObject;
+			return GetObjectAtPath(obj, path);
+		}
+		public static object GetObjectAtPath(object root, string[] path){
+			object currentObject = root;
 			int i = 0;
 			while(true){
-				if(i >= path.Length-1){
-					return obj;
+				if(i > path.Length-1){
+					return currentObject;
 				}
-				//Get field 
-				FieldInfo field = obj.GetType().GetField(path[i], BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-				if(field == null){
-					Debug.LogError($"Cannot find field {path[i]} in object {obj}");
-					return null;
+				if(path[i] == "Array"){
+					currentObject = TraverseArrayPath(currentObject, path, ref i);
 				}
-				i++;
-				//IF following path is an array
-				if (path[i] == "Array"){//reads from the array and skips it
-					
-					i++;// Skip ARRAY keyword
-					
-					string[] split = path[i].Split('[', ']');
-					int enumerableIndex = Convert.ToInt32(split[1]);
-					
-					object value = field.GetValue(obj);
-					if(value == null){
-						Debug.LogError("Array is null");
-						return null;
-					}
-					
-					IEnumerable<object> enumerable = value as IEnumerable<object>;
-					if(enumerable == null){
-						Debug.LogError("Value is not an enumerable");
-						return null;
-					}
-					obj = enumerable.ElementAt(enumerableIndex);
-					i++;
-					continue;
+				else{
+					currentObject = TraverseFieldPath(currentObject, path, ref i);
 				}
-				
-				obj = field.GetValue(obj);
 			}
+		}
+		public static object GetPropertyObjectValue(SerializedProperty property)
+		{
+			return property.serializedObject.FindProperty(property.propertyPath);
+		}
+
+		static object TraverseFieldPath(object obj, string[] path, ref int pathIndex)
+		{
+			//Get field 
+			FieldInfo field = obj.GetType().GetField(path[pathIndex], BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+			if(field == null){
+				Debug.LogError($"Cannot find field {path[pathIndex]} in object {obj}");
+				return null;
+			}
+			pathIndex++;
+			
+			
+			obj = field.GetValue(obj);
+			return obj;
+		}
+		static object TraverseArrayPath(object array, string[] path, ref int pathIndex){
+			pathIndex++;// Skip ARRAY keyword
+			string[] splitIndexData = path[pathIndex].Split('[', ']');
+			int enumerableIndex = Convert.ToInt32(splitIndexData[1]);
+			pathIndex++;// Skip index
+			
+			if(array == null){
+				Debug.LogError("Array is null");
+				return null;
+			}
+			
+			IEnumerable<object> enumerable = array as IEnumerable<object>;
+			if(enumerable == null){
+				Debug.LogError("Value is not an enumerable");
+				return null;
+			}
+			object result = enumerable.ElementAt(enumerableIndex);
+			return result;
 		}
 
 /*
