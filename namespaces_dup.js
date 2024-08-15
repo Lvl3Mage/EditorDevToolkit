@@ -1,4 +1,4 @@
 var namespaces_dup =
 [
-    [ "Lvl3Mage", "a00014.html", "a00014" ]
+    [ "Lvl3Mage", "a00023.html", "a00023" ]
 ];

@@ -6,12 +6,12 @@
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <!-- BEGIN opengraph metadata -->
-<meta property="og:title" content="Editor Dev Toolkit: Editor Dev Toolkit" />
+<meta property="og:title" content="Editor Dev Toolkit: Lvl3Mage.EditorDevToolkit.Editor.VerticalLayout Class Reference" />
 <!-- <meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" /> -->
 <meta property="og:description" content="A collection of utility functions for development within the Unity Editor." />
 <meta property="og:url" content="https://lvl3mage.github.io/EditorDevToolkit" />
 <!-- END opengraph metadata -->
-<title>Editor Dev Toolkit: Editor Dev Toolkit</title>
+<title>Editor Dev Toolkit: Lvl3Mage.EditorDevToolkit.Editor.VerticalLayout Class Reference</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -96,7 +96,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00046.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -114,39 +114,100 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">Editor Dev Toolkit </div></div>
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00043.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">Lvl3Mage.EditorDevToolkit.Editor.VerticalLayout Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_README"></a> </p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Editor Dev Toolkit</h1>
-<p >A collection of utility functions for development within the Unity Editor. </p>
-<h2><a class="anchor" id="autotoc_md2"></a>
-Requirements</h2>
-<ul>
-<li>Unity 2021.3 or later</li>
+
+<p>A utility class that can be used to draw multiple elements in a vertical layout.  
+ <a href="a00046.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00050.html">Element</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5666cbdec1f01758a821031c65aec76f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#a5666cbdec1f01758a821031c65aec76f">Add</a> (Action&lt; Rect &gt; draw, Func&lt; Rect, float &gt; getHeight, int order=0, bool indent=true)</td></tr>
+<tr class="memdesc:a5666cbdec1f01758a821031c65aec76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the layout.  <a href="a00046.html#a5666cbdec1f01758a821031c65aec76f">More...</a><br /></td></tr>
+<tr class="separator:a5666cbdec1f01758a821031c65aec76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A utility class that can be used to draw multiple elements in a vertical layout. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5666cbdec1f01758a821031c65aec76f" name="a5666cbdec1f01758a821031c65aec76f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5666cbdec1f01758a821031c65aec76f">&#9670;&nbsp;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Lvl3Mage.EditorDevToolkit.Editor.VerticalLayout.Add </td>
+          <td>(</td>
+          <td class="paramtype">Action&lt; Rect &gt;&#160;</td>
+          <td class="paramname"><em>draw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Func&lt; Rect, float &gt;&#160;</td>
+          <td class="paramname"><em>getHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>order</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>indent</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element to the layout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">draw</td><td>The action that will be called to draw the element. The action should draw the element at the given rect. </td></tr>
+    <tr><td class="paramname">getHeight</td><td>A function that returns the height of the element given the rect it will be drawn at. </td></tr>
+    <tr><td class="paramname">order</td><td>The order in which the element will be drawn. Elements with lower order will be drawn first. </td></tr>
+    <tr><td class="paramname">indent</td><td>Whether the element should be indented. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>VerticalLayout.cs</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Installation</h2>
-<p >Include a scoped registry with</p><ul>
-<li><em>name:</em> <code>com.lvl3mage</code></li>
-<li><em>url:</em> <code><a href="https://registry.npmjs.org">https://registry.npmjs.org</a></code></li>
-</ul>
-<p >Add the package to your Unity project by importing the <code>com.lvl3mage.editor-dev-toolkit</code> package. </p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Documentation</h2>
-<p >The documentation for Editor Dev Toolkit can be found <a href="https://lvl3mage.github.io/EditorDevToolkit">here</a>.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Author</h2>
-<p ><a class="el" href="a00023.html">Lvl3Mage</a> - <a href="https://github.com/lvl3mage">GitHub</a></p>
-<p >Docs styling with <a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome-css</a> </p>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="a00023.html">Lvl3Mage</a></li><li class="navelem"><a class="el" href="a00024.html">EditorDevToolkit</a></li><li class="navelem"><a class="el" href="a00025.html">Editor</a></li><li class="navelem"><a class="el" href="a00046.html">VerticalLayout</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

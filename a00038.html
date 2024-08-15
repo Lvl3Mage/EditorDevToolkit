@@ -96,7 +96,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('a00027.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('a00038.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -117,32 +117,90 @@ $(document).ready(function(){initNavTree('a00027.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a00024.html">List of all members</a>  </div>
+<a href="a00035.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Lvl3Mage.EditorDevToolkit.Editor.EditorUtils Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A class that provides helper functions for working with the Unity <a class="el" href="a00016.html">Editor</a>  
- <a href="a00027.html#details">More...</a></p>
+<p>A class that provides helper functions for working with the Unity <a class="el" href="a00025.html">Editor</a>  
+ <a href="a00038.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8da41bedfa09b54152ca935053828074"><td class="memItemLeft" align="right" valign="top">static SerializedProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a8da41bedfa09b54152ca935053828074">GetSiblingProperty</a> (SerializedProperty property, string siblingName)</td></tr>
-<tr class="memdesc:a8da41bedfa09b54152ca935053828074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a sibling property of the given property  <a href="a00027.html#a8da41bedfa09b54152ca935053828074">More...</a><br /></td></tr>
+<tr class="memitem:a8da41bedfa09b54152ca935053828074"><td class="memItemLeft" align="right" valign="top">static SerializedProperty&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a8da41bedfa09b54152ca935053828074">GetSiblingProperty</a> (SerializedProperty property, string siblingName)</td></tr>
+<tr class="memdesc:a8da41bedfa09b54152ca935053828074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a sibling property of the given property  <a href="a00038.html#a8da41bedfa09b54152ca935053828074">More...</a><br /></td></tr>
 <tr class="separator:a8da41bedfa09b54152ca935053828074"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea54234ccb6a26832d9aaf6f6289ac9"><td class="memItemLeft" align="right" valign="top">static Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a1ea54234ccb6a26832d9aaf6f6289ac9">PropertyRect</a> (SerializedProperty prop, float x, float width, ref float drawHeight)</td></tr>
-<tr class="memdesc:a1ea54234ccb6a26832d9aaf6f6289ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the rect for a property and increments the drawHeight  <a href="a00027.html#a1ea54234ccb6a26832d9aaf6f6289ac9">More...</a><br /></td></tr>
-<tr class="separator:a1ea54234ccb6a26832d9aaf6f6289ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c22fd9c7ff3f7523470e29e81c194c8"><td class="memItemLeft" align="right" valign="top">static Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a9c22fd9c7ff3f7523470e29e81c194c8">LineRect</a> (float x, float width, ref float drawHeight)</td></tr>
-<tr class="memdesc:a9c22fd9c7ff3f7523470e29e81c194c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a rect for a line and increments the drawHeight  <a href="a00027.html#a9c22fd9c7ff3f7523470e29e81c194c8">More...</a><br /></td></tr>
-<tr class="separator:a9c22fd9c7ff3f7523470e29e81c194c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="memItemLeft" align="right" valign="top">static object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00027.html#a849ccbac1967aa833b9bf0b259a5d2a9">GetParentObject</a> (SerializedProperty parentProp)</td></tr>
-<tr class="memdesc:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parent object of a serialized property. Useful for reflection  <a href="a00027.html#a849ccbac1967aa833b9bf0b259a5d2a9">More...</a><br /></td></tr>
+<tr class="memitem:ad1fd8af588b2ecc6cf38f8da2f65be25"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ad1fd8af588b2ecc6cf38f8da2f65be25">DrawProperty</a> (ref Rect position, SerializedProperty property, GUIContent label=null)</td></tr>
+<tr class="memdesc:ad1fd8af588b2ecc6cf38f8da2f65be25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a property and increments the drawHeight of the position  <a href="a00038.html#ad1fd8af588b2ecc6cf38f8da2f65be25">More...</a><br /></td></tr>
+<tr class="separator:ad1fd8af588b2ecc6cf38f8da2f65be25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b12a3936c5efa2db6f7389ee7782c3"><td class="memItemLeft" align="right" valign="top">static Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a29b12a3936c5efa2db6f7389ee7782c3">ReservePropertyRect</a> (ref Rect position, SerializedProperty prop)</td></tr>
+<tr class="memdesc:a29b12a3936c5efa2db6f7389ee7782c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the rect for a property and increments the drawHeight  <a href="a00038.html#a29b12a3936c5efa2db6f7389ee7782c3">More...</a><br /></td></tr>
+<tr class="separator:a29b12a3936c5efa2db6f7389ee7782c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe804bf024ebdf81b5605c2e5334b06"><td class="memItemLeft" align="right" valign="top">static Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a6fe804bf024ebdf81b5605c2e5334b06">ReserveContentRect</a> (ref Rect position, GUIContent content, GUIStyle style=null)</td></tr>
+<tr class="memdesc:a6fe804bf024ebdf81b5605c2e5334b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a rect for the gui content and increments the drawHeight  <a href="a00038.html#a6fe804bf024ebdf81b5605c2e5334b06">More...</a><br /></td></tr>
+<tr class="separator:a6fe804bf024ebdf81b5605c2e5334b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f6fdee4b299d930819e0b0c44b3a91"><td class="memItemLeft" align="right" valign="top">static Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a88f6fdee4b299d930819e0b0c44b3a91">ReserveLineRect</a> (ref Rect position, GUIStyle style=null)</td></tr>
+<tr class="memdesc:a88f6fdee4b299d930819e0b0c44b3a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a rect for a line and increments the drawHeight  <a href="a00038.html#a88f6fdee4b299d930819e0b0c44b3a91">More...</a><br /></td></tr>
+<tr class="separator:a88f6fdee4b299d930819e0b0c44b3a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="memItemLeft" align="right" valign="top">static object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a849ccbac1967aa833b9bf0b259a5d2a9">GetParentObject</a> (SerializedProperty parentProp)</td></tr>
+<tr class="memdesc:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parent object of a serialized property. Useful for reflection  <a href="a00038.html#a849ccbac1967aa833b9bf0b259a5d2a9">More...</a><br /></td></tr>
 <tr class="separator:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >A class that provides helper functions for working with the Unity <a class="el" href="a00016.html">Editor</a> </p>
+<div class="textblock"><p >A class that provides helper functions for working with the Unity <a class="el" href="a00025.html">Editor</a> </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad1fd8af588b2ecc6cf38f8da2f65be25" name="ad1fd8af588b2ecc6cf38f8da2f65be25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fd8af588b2ecc6cf38f8da2f65be25">&#9670;&nbsp;</a></span>DrawProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.DrawProperty </td>
+          <td>(</td>
+          <td class="paramtype">ref Rect&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SerializedProperty&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GUIContent&#160;</td>
+          <td class="paramname"><em>label</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws a property and increments the drawHeight of the position </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to draw the property at. This will be incremented by the height of the property </td></tr>
+    <tr><td class="paramname">property</td><td>The property to draw </td></tr>
+    <tr><td class="paramname">label</td><td>The label to draw with the property. If null, the property's displayName will be used </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a849ccbac1967aa833b9bf0b259a5d2a9" name="a849ccbac1967aa833b9bf0b259a5d2a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a849ccbac1967aa833b9bf0b259a5d2a9">&#9670;&nbsp;</a></span>GetParentObject()</h2>
 
@@ -224,8 +282,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9c22fd9c7ff3f7523470e29e81c194c8" name="a9c22fd9c7ff3f7523470e29e81c194c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c22fd9c7ff3f7523470e29e81c194c8">&#9670;&nbsp;</a></span>LineRect()</h2>
+<a id="a6fe804bf024ebdf81b5605c2e5334b06" name="a6fe804bf024ebdf81b5605c2e5334b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe804bf024ebdf81b5605c2e5334b06">&#9670;&nbsp;</a></span>ReserveContentRect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,22 +292,70 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Rect Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.LineRect </td>
+          <td class="memname">static Rect Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.ReserveContentRect </td>
           <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramtype">ref Rect&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
+          <td class="paramtype">GUIContent&#160;</td>
+          <td class="paramname"><em>content</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">ref float&#160;</td>
-          <td class="paramname"><em>drawHeight</em>&#160;</td>
+          <td class="paramtype">GUIStyle&#160;</td>
+          <td class="paramname"><em>style</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes a rect for the gui content and increments the drawHeight </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>The position to draw the rect at. This will be incremented by the height of the rect </td></tr>
+    <tr><td class="paramname">content</td><td>The content to draw in the rect. If null, the content will be presumed as a si </td></tr>
+    <tr><td class="paramname">style</td><td>The style to use for the rect. If null, EditorStyles.label will be used </td></tr>
+    <tr><td class="paramname">fullWidth</td><td>Whether the line should take up the full width of the position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The rect for the line </dd></dl>
+
+</div>
+</div>
+<a id="a88f6fdee4b299d930819e0b0c44b3a91" name="a88f6fdee4b299d930819e0b0c44b3a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f6fdee4b299d930819e0b0c44b3a91">&#9670;&nbsp;</a></span>ReserveLineRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Rect Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.ReserveLineRect </td>
+          <td>(</td>
+          <td class="paramtype">ref Rect&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GUIStyle&#160;</td>
+          <td class="paramname"><em>style</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -267,9 +373,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Computes a rect for a line and increments the drawHeight </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>The x position of the rect </td></tr>
-    <tr><td class="paramname">width</td><td>The width of the rect </td></tr>
-    <tr><td class="paramname">drawHeight</td><td>The current height of the draw. This will be incremented by the height of the line </td></tr>
+    <tr><td class="paramname">position</td><td>The position to draw the line at. This will be incremented by the height of the line </td></tr>
   </table>
   </dd>
 </dl>
@@ -277,8 +381,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ea54234ccb6a26832d9aaf6f6289ac9" name="a1ea54234ccb6a26832d9aaf6f6289ac9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ea54234ccb6a26832d9aaf6f6289ac9">&#9670;&nbsp;</a></span>PropertyRect()</h2>
+<a id="a29b12a3936c5efa2db6f7389ee7782c3" name="a29b12a3936c5efa2db6f7389ee7782c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b12a3936c5efa2db6f7389ee7782c3">&#9670;&nbsp;</a></span>ReservePropertyRect()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,28 +391,16 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Rect Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.PropertyRect </td>
+          <td class="memname">static Rect Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.ReservePropertyRect </td>
           <td>(</td>
+          <td class="paramtype">ref Rect&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">SerializedProperty&#160;</td>
-          <td class="paramname"><em>prop</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>width</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ref float&#160;</td>
-          <td class="paramname"><em>drawHeight</em>&#160;</td>
+          <td class="paramname"><em>prop</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -345,7 +437,7 @@ Static Public Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00014.html">Lvl3Mage</a></li><li class="navelem"><a class="el" href="a00015.html">EditorDevToolkit</a></li><li class="navelem"><a class="el" href="a00016.html">Editor</a></li><li class="navelem"><a class="el" href="a00027.html">EditorUtils</a></li>
+    <li class="navelem"><a class="el" href="a00023.html">Lvl3Mage</a></li><li class="navelem"><a class="el" href="a00024.html">EditorDevToolkit</a></li><li class="navelem"><a class="el" href="a00025.html">Editor</a></li><li class="navelem"><a class="el" href="a00038.html">EditorUtils</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['editor_20dev_20toolkit_0',['Editor Dev Toolkit',['../index.html',1,'']]],
-  ['editorutils_1',['EditorUtils',['../a00027.html',1,'Lvl3Mage::EditorDevToolkit::Editor']]]
+  ['add_0',['Add',['../a00046.html#a5666cbdec1f01758a821031c65aec76f',1,'Lvl3Mage::EditorDevToolkit::Editor::VerticalLayout']]]
 ];
