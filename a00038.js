@@ -5,5 +5,6 @@ var a00038 =
     [ "GetSiblingProperty", "a00038.html#a8da41bedfa09b54152ca935053828074", null ],
     [ "ReserveContentRect", "a00038.html#a6fe804bf024ebdf81b5605c2e5334b06", null ],
     [ "ReserveLineRect", "a00038.html#a88f6fdee4b299d930819e0b0c44b3a91", null ],
-    [ "ReservePropertyRect", "a00038.html#a29b12a3936c5efa2db6f7389ee7782c3", null ]
+    [ "ReservePropertyRect", "a00038.html#a29b12a3936c5efa2db6f7389ee7782c3", null ],
+    [ "SearchForField", "a00038.html#a3f609487aea5ad3c7a776a84bc0abb01", null ]
 ];

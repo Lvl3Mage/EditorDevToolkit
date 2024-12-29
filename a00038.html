@@ -117,6 +117,7 @@ $(document).ready(function(){initNavTree('a00038.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="a00035.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Lvl3Mage.EditorDevToolkit.Editor.EditorUtils Class Reference</div></div>
 </div><!--header-->
@@ -145,6 +146,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="memItemLeft" align="right" valign="top">static object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a849ccbac1967aa833b9bf0b259a5d2a9">GetParentObject</a> (SerializedProperty parentProp)</td></tr>
 <tr class="memdesc:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parent object of a serialized property. Useful for reflection  <a href="a00038.html#a849ccbac1967aa833b9bf0b259a5d2a9">More...</a><br /></td></tr>
 <tr class="separator:a849ccbac1967aa833b9bf0b259a5d2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a3f609487aea5ad3c7a776a84bc0abb01"><td class="memItemLeft" align="right" valign="top">static FieldInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a3f609487aea5ad3c7a776a84bc0abb01">SearchForField</a> (Type type, string fieldName, BindingFlags bindings=BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.Static)</td></tr>
+<tr class="memdesc:a3f609487aea5ad3c7a776a84bc0abb01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively searches for a field in a type and its base types. Useful for reflection when the field you are looking for is a private field in a base class  <a href="a00038.html#a3f609487aea5ad3c7a776a84bc0abb01">More...</a><br /></td></tr>
+<tr class="separator:a3f609487aea5ad3c7a776a84bc0abb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A class that provides helper functions for working with the Unity <a class="el" href="a00025.html">Editor</a> </p>
@@ -426,6 +433,59 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The rect for the property </dd></dl>
+
+</div>
+</div>
+<a id="a3f609487aea5ad3c7a776a84bc0abb01" name="a3f609487aea5ad3c7a776a84bc0abb01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f609487aea5ad3c7a776a84bc0abb01">&#9670;&nbsp;</a></span>SearchForField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static FieldInfo Lvl3Mage.EditorDevToolkit.Editor.EditorUtils.SearchForField </td>
+          <td>(</td>
+          <td class="paramtype">Type&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BindingFlags&#160;</td>
+          <td class="paramname"><em>bindings</em> = <code>BindingFlags.Public&#160;|&#160;BindingFlags.NonPublic&#160;|&#160;BindingFlags.Instance&#160;|&#160;BindingFlags.Static</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recursively searches for a field in a type and its base types. Useful for reflection when the field you are looking for is a private field in a base class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The type to search for the field in </td></tr>
+    <tr><td class="paramname">fieldName</td><td>The name of the field to search for </td></tr>
+    <tr><td class="paramname">bindings</td><td>The bindings to search for the field with. Defaults to all bindings </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first field found with the given name, or null if no field is found </dd></dl>
 
 </div>
 </div>

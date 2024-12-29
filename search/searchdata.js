@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "[adeglrv",
+  0: "[adeglrsv",
   1: "elv",
   2: "l",
-  3: "adgr",
+  3: "adgrs",
   4: "[el"
 };
 
