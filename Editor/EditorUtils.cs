@@ -199,7 +199,8 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 		static object TraverseFieldPath(object obj, string[] path, ref int pathIndex)
 		{
 			//Get field 
-			FieldInfo field = obj.GetType().GetField(path[pathIndex], BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+			//FieldInfo field = obj.GetType().GetField(path[pathIndex], BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+			FieldInfo field = SearchForField(obj.GetType(), path[pathIndex]);
 			if(field == null){
 				Debug.LogError($"Cannot find field {path[pathIndex]} in object {obj}");
 				return null;
@@ -230,6 +231,29 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 			return result;
 		}
 
+		///  <summary>
+		///  Recursively searches for a field in a type and its base types. Useful for reflection when the field you are looking for is a private field in a base class
+		///  </summary>
+		///  <param name="type">
+		/// 	The type to search for the field in
+		///  </param>
+		///  <param name="fieldName">
+		/// 	The name of the field to search for
+		///  </param>
+		///  <param name="bindings">
+		/// 	The bindings to search for the field with. Defaults to all bindings
+		/// </param>
+		///  <returns>
+		/// The first field found with the given name, or null if no field is found
+		/// </returns>
+		static FieldInfo SearchForField(Type type, string fieldName, BindingFlags bindings = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static){
+			FieldInfo field = type.GetField(fieldName, bindings);
+			if(field != null) return field;
+			if(type.BaseType != null){
+				return SearchForField(type.BaseType, fieldName);
+			}
+			return null;
+		}
 /*
         public static T GetFieldOrPropertyValue<T>(string fieldName, object obj, bool includeAllBases = false, BindingFlags bindings = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
         {
