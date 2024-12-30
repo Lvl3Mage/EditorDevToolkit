@@ -41,7 +41,7 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 		/// <param name="indent">
 		/// Whether the element should be indented.
 		/// </param>
-		public void Add(Action<Rect> draw, Func<Rect,float> getHeight, int order = 0, bool indent = true)
+		public void Add(Action<Rect> draw, Func<Rect,float> getHeight, int order = 0, bool indent = false)
 		{
 			for (int i = 0; i < elements.Count; i++)
 			{
@@ -54,7 +54,7 @@ namespace Lvl3Mage.EditorDevToolkit.Editor
 			}
 			elements.Add(new Element(draw, getHeight, order, indent));
 		}
-		public void Add(Action<Rect> draw, float height, int order = 0, bool indent = true)
+		public void Add(Action<Rect> draw, float height, int order = 0, bool indent = false)
 		{
 			Add(draw, _ => height, order, indent);
 		}
